@@ -16,7 +16,7 @@ namespace ConsoleApp22.Tests
         {
             string[] expectedResult = {"salam","","vaght","","bekhir"};
 
-            string path = @"C:\git\AP97982\A1S3\test.txt";
+            string path = @"..\..\..\test.txt";
 
             string[] functionResult = Program.Q1_GetWords(path);
 
