@@ -51,7 +51,10 @@ namespace A0.Tests
         [TestMethod()]
         public void SqrtTest()
         {
-            Assert.Fail();
+            double expectedResult = 9;
+            double functionResult = Program.Sqrt(a:81);
+
+            Assert.AreEqual(expectedResult, actual: functionResult);
         }
 
         [TestMethod()]
