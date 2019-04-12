@@ -8,13 +8,19 @@ namespace ConsoleApp1
 {
     public class Flight
     {
-        //Properties:
-        //FlightID: string
-        //Airline: Airline
-        //Capacity: int
-        //Source: string
-        //Destination: string
-        //FlyDate: DateTime
+
+        public string Flightid;
+       
+
+        public Airline Airline;
+       
+        public int Capacity;
+       
+        public string Source;
+         
+        public string Destination;
+        
+        public DateTime FlyDate;
 
 
         /// <summary>
@@ -29,13 +35,20 @@ namespace ConsoleApp1
         public Flight(string id, Airline airline, int capacity, string source, string dest,
             DateTime dateTime)
         {
-            //TODO
+            Flightid = id;
+            Airline = airline;
+            Capacity = capacity;
+            Source = source;
+            Destination = dest;
+            DB.AddFlight(this);
         }
 
         public bool IsFull()
         {
-            //TODO
-            throw new NotImplementedException();
+            if (Capacity == 0)
+                return true;
+            else
+                return false;
         }
     }
 }

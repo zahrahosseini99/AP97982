@@ -18,8 +18,9 @@ namespace ConsoleApp1
 
         public double Account;
 
-        public User(string fullName, string nationalID, string phoneNumber, double account)
+        public User(string fullName, string nationalID, string phoneNumber,double account=0)
         {
+            
             FullName = fullName;
             NationalID = nationalID;
             PhoneNumber = phoneNumber;
@@ -35,8 +36,13 @@ namespace ConsoleApp1
         /// <param name="ticket"></param>
         public void Reserve(Ticket ticket)
         {
-            //TODO
-            throw new NotImplementedException();
+  
+            Account -= ticket.Price;
+            FullName=ticket.Buyer.FullName;
+            NationalID = ticket.Buyer.NationalID;
+            PhoneNumber = ticket.Buyer.PhoneNumber;
+            Tickets.AddRange(ticket.Buyer.Tickets);
+            ticket.Flight.Capacity--;
         }
 
         /// <summary>
@@ -47,8 +53,13 @@ namespace ConsoleApp1
         /// <param name="ticket"></param>
         public void Cancel(Ticket ticket)
         {
-            //TODO
-            throw new NotImplementedException();
+
+
+            ticket.Buyer = null;
+            Tickets.AddRange(ticket.Buyer.Tickets);
+            ticket.Flight.Capacity++;
+            Tickets.Remove(ticket);
+            Account += 0.4 * ticket.Price;
         }
 
         /// <summary>
@@ -87,7 +98,7 @@ namespace ConsoleApp1
         /// <param name="source"></param>
         /// <param name="dest"></param>
         /// <returns></returns>
-        public List<Ticket> AirlineTickets(string source, string dest)
+        public List<Ticket> Roottickets(string source, string dest)
         {
             throw new NotImplementedException();
         }

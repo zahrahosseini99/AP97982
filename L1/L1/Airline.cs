@@ -13,6 +13,8 @@ namespace ConsoleApp1
         public Airline(string name)
         {
             Name = name;
+            DB.AddAirline(this);
         }
+
     }
 }

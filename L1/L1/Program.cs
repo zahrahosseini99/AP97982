@@ -10,6 +10,7 @@ namespace L1
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
