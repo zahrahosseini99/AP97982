@@ -3,7 +3,7 @@ using System;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 using System.Runtime.InteropServices;
 using A6;
-using static A6.Program;
+
 
 namespace A6.Tests
 {

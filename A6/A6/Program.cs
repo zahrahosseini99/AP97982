@@ -52,7 +52,7 @@ namespace A6
             X = x;
         }
     }
-   
+
     public struct TypeOfSize10240
     {
         TypeOfSize1024 a;
@@ -127,13 +127,19 @@ namespace A6
         TypeOfSize5 c;
         TypeOfSize5 d;
         TypeOfSize5 e;
-
         TypeOfSize5 a1;
         TypeOfSize5 a2;
+        TypeOfSize5 g;
+        TypeOfSize5 h;
+        TypeOfSize5 s;
+        byte ap;
+        byte ao;
+        byte ab;
+        byte aw;
 
     }
 
-   
+
 
     public struct TypeOfSize5
     {
@@ -228,11 +234,11 @@ namespace A6
     public class Program
     {
 
-        
+
         public static bool IdealHusband(FutureHusbandType fht)
 
         {
-       
+
             if (fht == (FutureHusbandType.IsShort | FutureHusbandType.HasBigNose | FutureHusbandType.IsBald))
                 return false;
             if (fht == (FutureHusbandType.IsShort | FutureHusbandType.HasBigNose))
@@ -241,7 +247,7 @@ namespace A6
                 return true;
             if (fht == (FutureHusbandType.IsBald | FutureHusbandType.IsShort))
                 return true;
-            if(fht== FutureHusbandType.IsShort)
+            if (fht == FutureHusbandType.IsShort)
                 return false;
             if (fht == FutureHusbandType.IsBald)
                 return false;
@@ -249,7 +255,7 @@ namespace A6
                 return false;
             return false;
         }
-       
+
         public static int GetObjectType(object x)
         {
             if (x is string)
