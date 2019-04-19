@@ -52,7 +52,7 @@ namespace A6
             X = x;
         }
     }
-    //2222222222222
+   
     public struct TypeOfSize10240
     {
         TypeOfSize1024 a;
@@ -133,7 +133,7 @@ namespace A6
 
     }
 
-    //2222222222222
+   
 
     public struct TypeOfSize5
     {
@@ -264,9 +264,7 @@ namespace A6
         }
         static void Main(string[] args)
         {
-            Console.WriteLine(Marshal.SizeOf(typeof(TypeOfSize32768)));
-
-
+           
         }
     }
 }
