@@ -54,7 +54,9 @@ namespace A3
            this._City = city;
            this._Orders = orders;
         }
-
+        //first foreach:check order in order's list
+        //second foreach:check product in product's list
+        //third foreach :check product[i](i++) in order[j]...(j++)
         public Product MostOrderedProduct()
         {
             var pro = new List<Product>();

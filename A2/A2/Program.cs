@@ -6,52 +6,46 @@ using System.Threading.Tasks;
 
 namespace A2
 {
-   public class Program
+    public class Program
     {
         private static void Main(string[] args)
         {
-           
-        }
 
+        }
         public static void ArraySwap(ref int[] array1, ref int[] array2)
         {
             int[] tmp = array1;
             array1 = array2;
             array2 = tmp;
-            foreach(int c in array2)
-            Console.WriteLine(c);
-
-            
+            Console.WriteLine(array2);
         }
 
-        public static void ArraySwap(int[] array1, int [] array2)
+        public static void ArraySwap(int[] array1, int[] array2)
         {
             int temp = 0;
-            for(int i = 0; i < array1.Length; i++)
+            for (int i = 0; i < array1.Length; i++)
             {
-                
-                    temp = array1[i];
+               temp = array1[i];
                 array1[i] = array2[i];
                 array2[i] = temp;
-               
             }
-           
+
         }
 
-        public static void AbsArray( int [] array)
+        public static void AbsArray(int[] array)
         {
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = Math.Abs(array[i]);
             }
         }
 
-        public static void Append( ref int [] array , int f)
+        public static void Append(ref int[] array, int f)
         {
             int[] arr = new int[array.Length + 1];
-           
-            int temp ;
-            for(int i = 0; i < array.Length; i++)
+
+            int temp;
+            for (int i = 0; i < array.Length; i++)
             {
                 temp = array[i];
                 array[i] = arr[i];
@@ -61,31 +55,30 @@ namespace A2
             array = arr;
         }
 
-        public static void Sum(out int e,params int [] nums)
+        public static void Sum(out int e, params int[] nums)
         {
-             e=0;
-            for(int i = 0; i < nums.Length; i++)
+            e = 0;
+            for (int i = 0; i < nums.Length; i++)
             {
-                e += nums[i];  
+                e += nums[i];
             }
         }
 
-        public static void Swap( ref int c, ref int d)
+        public static void Swap(ref int c, ref int d)
         {
-            int temp = 0;
-            temp = c;
+            int temp = c;
             c = d;
             d = temp;
         }
 
-        public static void Square(ref int  b)
+        public static void Square(ref int b)
         {
-             b= b * b;
+            b = b * b;
         }
 
         public static void AssignPi(out double a)
         {
-          a=Math.PI;
+            a = Math.PI;
         }
     }
 }

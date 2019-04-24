@@ -11,15 +11,15 @@ namespace A2.Tests
     [TestClass()]
     public class ProgramTests
     {
-        
+
 
         [TestMethod()]
         public void ArraySwapTest()
         {
-            int[] array1 = { 1, 2, 3,4 };
+            int[] array1 = { 1, 2, 3, 4 };
             int[] array3 = { 8, 9, 0 };
             int[] array2 = { 8, 9, 0 };
-            int[] array4 = { 1, 2, 3,4 };
+            int[] array4 = { 1, 2, 3, 4 };
             Program.ArraySwap(ref array1, ref array2);
             CollectionAssert.AreEqual(array3, array1);
             CollectionAssert.AreEqual(array4, array2);
@@ -61,7 +61,7 @@ namespace A2.Tests
         {
             int[] nums = { 1, 2, 3 };
             int e = 0;
-            Program.Sum(out e, nums);
+            Program.Sum(out e, 1, 2, 3);
             Assert.AreEqual(6, e);
 
         }
@@ -79,7 +79,7 @@ namespace A2.Tests
         [TestMethod()]
         public void SquareTest()
         {
-            int b=3;
+            int b = 3;
             Program.Square(ref b);
             Assert.AreEqual(9, b);
 
@@ -91,7 +91,7 @@ namespace A2.Tests
             double s;
             Program.AssignPi(out s);
             Assert.AreEqual(Math.PI, s);
-                    
+
         }
     }
 }
