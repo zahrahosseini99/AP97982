@@ -63,20 +63,27 @@ namespace A3
 
         public List<Customer> CustomersWithMostOrders()
         {
-            //int[] size = new int[Customers.Count];
-            //    for(int i = 0; i < Customers.Count; i++)
-            //{
-            //    foreach (var person in Customers)
-            //    {
-            //        foreach (var or in person.Orders)
-            //        {
-            //            size[i] += or.Products.Count;
-            //        }
-            //    }
-            //}
-
             var res = new List<Customer>();
+            var res1 = new List<Customer>();
             res.Add(Customers.OrderByDescending(x => x.Orders.Count).First());
+            int[] size = new int[Customers.Count];
+            for (int i = 0; i < Customers.Count; i++)
+            {
+                foreach (var person in Customers)
+                {
+                    foreach (var or in person.Orders)
+                    {
+                        size[i] += or.Products.Count;
+                    }
+                    if (size[i] == res[0].Orders.Count)
+                        res.Add(person);
+                }
+                
+
+            }
+
+
+
             return res;
         }
     }
