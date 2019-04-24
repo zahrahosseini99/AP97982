@@ -43,7 +43,7 @@ namespace ConsoleApp22
         public static string[] Q1_GetWords(string path)
         {
 
-            //Directory.SetCurrentDirectory(path);
+
             string content = File.ReadAllText(path);
             string[] words = content.Split('\n', '\r', ' ');
             return words;
@@ -59,13 +59,17 @@ namespace ConsoleApp22
         }
         public static string[] Q3_GetWordsOfTweet(string tweet)
         {
-            /*string  path = Console.ReadLine();
-             Directory.SetCurrentDirectory(path);
-             string content = File.ReadAllText(path);
-             string[] tweets = content.Split('\n');
-             tweet = tweets[0];*/
+            List<string> res = new List<string>();
             string[] tweetwords = tweet.Split('(', '.', '"', '!', '?', '#', '@', ',', ')', ':', ';', '*', '$', '%', '^', '&', '+', '-', '=', ' ', '،');
-            return tweetwords;
+            for (int i = 0; i < tweetwords.Length; i++)
+            {
+                if (tweetwords[i] != "")
+                {
+                    res.Add(tweetwords[i]);
+                }
+            }
+
+            return res.ToArray();
         }
         public static int Q4_GetPopChargeOfTweet(string tweet, string[] posWords, string[] negWords)
         {

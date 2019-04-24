@@ -38,15 +38,14 @@ namespace ConsoleApp22.Tests
         [TestMethod()]
         public void Q3_GetWordsOfTweetTest()
         {
-            string[] expectedResult = {"is","it"};
+            string[] expectedResult = { "This", "week's", "most", "popular", "artist","coldplay"};
 
-            string tweet = "is?it";
+            string tweet = "This week's most popular artist? @coldplay​!";
 
-            string [] functionResult = Program.Q3_GetWordsOfTweet(tweet);
-           
-               CollectionAssert.AreEqual(expectedResult, actual: functionResult);
-            
-           
+            string[] functionResult = Program.Q3_GetWordsOfTweet(tweet);
+
+            CollectionAssert.AreEqual(expectedResult, actual: functionResult);
+
         }
 
         [TestMethod()]
