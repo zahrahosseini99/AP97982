@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E847249D-5796-49E8-B152-5C09EEF671B2}</ProjectGuid>
+    <ProjectGuid>{9DBE9674-B115-47F6-A61D-259B8E3D3A8E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>A3Tests</RootNamespace>
@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\A3\A3.csproj">
-      <Project>{CC22E567-0209-482F-8D31-7D19C9AD2B41}</Project>
+      <Project>{287C0149-B2F0-4CE4-9D2B-06718B03FEC7}</Project>
       <Name>A3</Name>
     </ProjectReference>
   </ItemGroup>
