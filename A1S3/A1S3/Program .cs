@@ -43,7 +43,7 @@ namespace A1S3
         public static string[] Q1_GetWords(string path)
         {
             string content = File.ReadAllText(path);
-            string[] words = content.Split('\n', '\r', ' ');
+            string[] words = content.Split(new char[] { '\n', '\r', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             return words;
         }
