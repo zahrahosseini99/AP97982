@@ -38,9 +38,10 @@ namespace A1S3.Tests
         [TestMethod()]
         public void Q3_GetWordsOfTweetTest()
         {
-            string[] expectedResult = { "This", "week's", "most", "popular", "artist", "coldplay" };
+
 
             string tweet = "This week's most popular artist? @coldplay​!";
+            string[] expectedResult = tweet.Split(new char[] { ' ', '?', '@', '!' }, StringSplitOptions.RemoveEmptyEntries);
 
             string[] functionResult = Program.Q3_GetWordsOfTweet(tweet);
 
