@@ -80,7 +80,7 @@ namespace A1S1.Tests
             files.Sort();
             string[] functionResult = Program.ListFiles(Dir);
 
-            Assert.AreEqual(files.ToArray(), functionResult);
+            CollectionAssert.AreEqual(files.ToArray(), functionResult);
 
         }
 

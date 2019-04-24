@@ -48,7 +48,7 @@ namespace A1S1
 
             string content = File.ReadAllText(filePath);
             string[] lines = content.Split('\n');
-            return lines.Length-1;
+            return lines.Length - 1;
         }
 
         public static string[] ListFiles(string dirPath)
@@ -64,7 +64,7 @@ namespace A1S1
         public static double FileSize(string filePath)
         {
             double Count = 0;
-            string[] content = File.ReadAllText(filePath).Split('\n');
+            string[] content = File.ReadAllText(filePath).Split(' ');
             foreach (var s in content)
             {
                 Count += s.Length;
