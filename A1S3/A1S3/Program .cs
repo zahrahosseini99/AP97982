@@ -77,54 +77,38 @@ namespace A1S3
         public static int Q4_GetPopChargeOfTweet(string tweet, string[] posWords, string[] negWords)
         {
             int score = 0;
+            bool posbool;
+            bool negbool;
+            string[] newtweet = tweet.Split();
             foreach (string pos in posWords)
             {
-
-                if (tweet.Contains(pos))
-
+                if (Q2_IsInWords(newtweet, pos) == true)
                     score++;
-
             }
             foreach (string neg in negWords)
             {
 
-                if (tweet.Contains(neg))
-
+                if (Q2_IsInWords(newtweet, neg) == true)
                     score--;
-
             }
             return score;
         }
 
-
-
         public static double Q5_GetAvgPopChargeOfTweets(string[] tweets, string[] negWords, string[] posWords)
         {
-            double countpos = 0;
-            double countneg = 0;
-            double sum = 0;
+            int score = 0;
+            List<string> res = new List<string>();
             foreach (string tweetline in tweets)
             {
                 var tweetWords = Q3_GetWordsOfTweet(tweetline);
+                score = Q4_GetPopChargeOfTweet(tweetline, posWords, negWords);
                 foreach (string word in tweetWords)
                 {
-                    if (negWords.Contains(word) && word != "")
-                        countneg--;
-                    sum++;
+                    if (negWords.Contains(word) && word != "" || posWords.Contains(word) && word != "")
+                        res.Add(word);
                 }
             }
-            foreach (string tweetline in tweets)
-            {
-                var tweetWords = Q3_GetWordsOfTweet(tweetline);
-                foreach (string word in tweetWords)
-                {
-                    if (posWords.Contains(word) && word != "")
-                        countpos++;
-                    sum++;
-                }
-            }
-            return (countpos + countneg) / sum;
-
+            return score / (res.Count);
         }
     }
 }
