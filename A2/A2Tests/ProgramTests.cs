@@ -59,7 +59,7 @@ namespace A2.Tests
         [TestMethod()]
         public void SumTest()
         {
-            int[] nums = { 1, 2, 3 };
+
             int e = 0;
             Program.Sum(out e, 1, 2, 3);
             Assert.AreEqual(6, e);

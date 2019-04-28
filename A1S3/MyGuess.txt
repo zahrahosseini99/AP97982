@@ -1,19 +1,19 @@
-AfsharMahnaz:social:-1
-alimotahari_ir:political:1
-azarijahromi:cultural:0
-BBCBastani:social:-1
-BehnoudMasoud:political:-1
-Eshaq_jahangiri:political:-1
-HaddadAdel_ir:cultural:-2
-hesamodin1:political:-1
-ir_aref:social:-2
-ir_rezaee:social:-1
-IsraelPersian:political:-2
-Jedaaal:political:-1
-Khamenei_fa:political:-2
-mah_sadeghi:economic:-1
-MohajeraniSayed:political:-1
-mostafatajzade:political:-1
-Rouhani_ir:political:-2
-t_alidoosti:social:1
-USAdarFarsi:political:2
+AfsharMahnaz:Mahnaz Afshar:social:-1
+alimotahari_ir:Ali Motahari:political:1
+azarijahromi:Azarijahromi:cultural:0
+BBCBastani:Hossein Bastani:social:-1
+BehnoudMasoud:Masoud Behnoud:political:-1
+Eshaq_jahangiri:Eshaq Jhangiri:political:-1
+HaddadAdel_ir:Qolamali HdadAdel:cultural:-2
+hesamodin1:Hesameddin Ashena :political:-1
+ir_aref:MohammadREza Aref:social:-2
+ir_rezaee:Mohsen rezaee:social:-1
+IsraelPersian:Israel persian :political:-2
+Jedaaal:Ali Alizadeh:political:-1
+Khamenei_fa:Seyed Ali KHamenei:political:-2
+mah_sadeghi:Mahmoud Sadeghi:economic:-1
+MohajeraniSayed:Seyed Atallah Mohajerani:political:-1
+mostafatajzade:Mostafa Tajzadeh:political:-1
+Rouhani_ir:Hasan Rouhani:political:-2
+t_alidoosti:Taraneh Alidoost:social:1
+USAdarFarsi:Usa farsi:political:2

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{230E51AC-C11C-480F-B933-CF12EA5EC4D3}</ProjectGuid>
+    <ProjectGuid>{BA583155-F94A-41B1-B2CE-A4DFC1AF7321}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>A1S3</RootNamespace>
-    <AssemblyName>A1S3</AssemblyName>
+    <RootNamespace>A6</RootNamespace>
+    <AssemblyName>A6</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program .cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

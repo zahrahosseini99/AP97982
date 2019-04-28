@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B25D700-D020-4C3B-B6F6-22E1094FA3BE}</ProjectGuid>
+    <ProjectGuid>{E32E554C-C4ED-4919-B821-AF1A278507FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>A1S1Tests</RootNamespace>
-    <AssemblyName>A1S1Tests</AssemblyName>
+    <RootNamespace>A6Tests</RootNamespace>
+    <AssemblyName>A6Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -56,16 +56,16 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="ProgramTests %281%29.cs" />
+    <Compile Include="MemoryTestTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\A1S1\A1S1.csproj">
-      <Project>{CE8F1F90-AC20-4692-A575-74A0CF68C615}</Project>
-      <Name>A1S1</Name>
+    <ProjectReference Include="..\A6\A6.csproj">
+      <Project>{BA583155-F94A-41B1-B2CE-A4DFC1AF7321}</Project>
+      <Name>A6</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

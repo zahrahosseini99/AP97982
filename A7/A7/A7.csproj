@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{230E51AC-C11C-480F-B933-CF12EA5EC4D3}</ProjectGuid>
+    <ProjectGuid>{692BE384-C232-485E-8E38-3620CFEE17B4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>A1S3</RootNamespace>
-    <AssemblyName>A1S3</AssemblyName>
+    <RootNamespace>A7</RootNamespace>
+    <AssemblyName>A7</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program .cs" />
+    <Compile Include="Dabir.cs" />
+    <Compile Include="Degree.cs" />
+    <Compile Include="Eduinstitute.cs" />
+    <Compile Include="ICitizen.cs" />
+    <Compile Include="ITeacher.cs" />
+    <Compile Include="Khalle.cs" />
+    <Compile Include="PoliceStation.cs" />
+    <Compile Include="Professor.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

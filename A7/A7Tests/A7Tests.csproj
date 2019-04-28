@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E06C760E-CE95-48D0-8903-6E085B5B8F9E}</ProjectGuid>
+    <ProjectGuid>{BE5F5E78-AAEF-4080-BBA5-61CB750EA8A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>A1S3Tests2</RootNamespace>
-    <AssemblyName>A1S3Tests2</AssemblyName>
+    <RootNamespace>A7Tests</RootNamespace>
+    <AssemblyName>A7Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -39,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -63,9 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\A1S3\A1S3.csproj">
-      <Project>{230E51AC-C11C-480F-B933-CF12EA5EC4D3}</Project>
-      <Name>A1S3</Name>
+    <ProjectReference Include="..\A7\A7.csproj">
+      <Project>{692BE384-C232-485E-8E38-3620CFEE17B4}</Project>
+      <Name>A7</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
