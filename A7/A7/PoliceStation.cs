@@ -5,7 +5,7 @@ namespace A7
 {
     public static class PoliceStation
     {
-        private  static string _BlackList;
+        private static string _BlackList;
         public static string BlackList
         {
             get

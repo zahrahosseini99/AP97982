@@ -1,6 +1,6 @@
 ﻿namespace A7
 {
-    public class Dabir: ICitizen,ITeacher
+    public class Dabir : ICitizen, ITeacher
     {
         private Degree _TopDegree;
         public Degree TopDegree
@@ -64,7 +64,7 @@
                 _Under100StudentCount = value;
             }
         }
-        public Dabir(string nationalId, string name,  string imgurl, Degree topdegree,int under100StudentCount)
+        public Dabir(string nationalId, string name, string imgurl, Degree topdegree, int under100StudentCount)
         {
 
             this._Name = name;

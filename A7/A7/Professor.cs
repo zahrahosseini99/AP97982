@@ -1,6 +1,6 @@
 ﻿namespace A7
 {
-    public class Professor :ICitizen,ITeacher
+    public class Professor : ICitizen, ITeacher
     {
         private Degree _TopDegree;
         public Degree TopDegree
@@ -64,7 +64,7 @@
                 _ResearchCount = value;
             }
         }
-        public Professor(string nationalId, string name, string imgurl, Degree topdegree,int researchCount)
+        public Professor(string nationalId, string name, string imgurl, Degree topdegree, int researchCount)
         {
 
             this._Name = name;

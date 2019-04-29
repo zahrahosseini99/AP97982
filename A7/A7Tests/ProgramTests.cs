@@ -20,15 +20,15 @@ namespace A7Tests
         }
 
 
-        
+
         [TestMethod]
         public void Q4KhaleTest3_Constructor()
         {
             var khale = CreateKhalleInstance(null as Khalle, "47212121", "Zahra", "http://img.co/zahra.jpg", Degree.PhD);
         }
-        
 
-        
+
+
         [TestMethod]
         public void Q4KhaleTest1_ITeacher()
         {
@@ -41,9 +41,9 @@ namespace A7Tests
             Assert.AreEqual("http://img.co/zahra.jpg", khale.ImgUrl);
             Assert.AreEqual(Degree.PhD, khale.TopDegree);
         }
-       
 
-        
+
+
         [TestMethod]
         public void Q4KhaleTest2_ICitizen()
         {
@@ -55,22 +55,22 @@ namespace A7Tests
             Assert.AreEqual("Zahra", citizen.Name);
 
         }
-        
 
-       
+
+
         [TestMethod]
         public void Q5DabirTest3_Constructor()
         {
 
             var dabir = CreateDabirInstance(null as Dabir, "47212121", "Ali", "http://img.co/Ali.jpg", Degree.Master, 10);
-            
+
         }
-        
+
         [TestMethod]
         public void Q5DabirTest1_ITeacher()
         {
 
-            var dabir = CreateDabirInstance(null as Dabir, "47212121", "Ali", "http://img.co/ali.jpg", Degree.Master,10);
+            var dabir = CreateDabirInstance(null as Dabir, "47212121", "Ali", "http://img.co/ali.jpg", Degree.Master, 10);
 
             ITeacher teacher = dabir;
 
@@ -80,7 +80,7 @@ namespace A7Tests
             Assert.AreEqual("http://img.co/ali.jpg", dabir.ImgUrl);
             Assert.AreEqual(Degree.Master, dabir.TopDegree);
         }
-        
+
         [TestMethod]
         public void Q5DabirTest2_ICitizen()
         {
@@ -91,16 +91,16 @@ namespace A7Tests
             Assert.AreEqual("47212121", citizen.NationalId);
             Assert.AreEqual("Ali", citizen.Name);
         }
-        
 
-       
+
+
         [TestMethod]
         public void Q6ProfessorTest3_Constructor()
         {
             var professor = CreateProfInstance(null as Professor, "47212121", "Sauleh", "http://img.co/sauleh.jpg",
                 Degree.PhD, 20);
         }
-       
+
         [TestMethod]
         public void Q6ProfessorTest1_ITeacher()
         {
@@ -113,9 +113,9 @@ namespace A7Tests
             Assert.AreEqual("http://img.co/sauleh.jpg", prof.ImgUrl);
             Assert.AreEqual(Degree.PhD, prof.TopDegree);
         }
-        
 
-       
+
+
         [TestMethod]
         public void Q6ProfessorTest2_ICitizen()
         {
@@ -175,7 +175,7 @@ namespace A7Tests
 
 
         #endregion
-       
+
 
     }
 }

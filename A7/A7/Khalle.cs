@@ -11,8 +11,8 @@ namespace A7
             }
             set
             {
-                if(TopDegree!=Degree.None)
-                _TopDegree = value;
+                if (TopDegree != Degree.None)
+                    _TopDegree = value;
             }
         }
         private string _ImgUrl;
@@ -52,7 +52,7 @@ namespace A7
             }
 
         }
-        public Khalle(string nationalId,string name,string imgurl,Degree topdegree)
+        public Khalle(string nationalId, string name, string imgurl, Degree topdegree)
         {
 
             this._Name = name;
@@ -61,7 +61,7 @@ namespace A7
             this._TopDegree = topdegree;
 
         }
-     public string Teach()
+        public string Teach()
         {
             return ("Khalle" + " " + this.Name + " " + "is" + " " + "teaching");
         }

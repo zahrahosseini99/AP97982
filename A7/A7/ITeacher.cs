@@ -12,11 +12,11 @@ namespace A7
             get;
             set;
         }
-      Degree TopDegree
+        Degree TopDegree
         {
             get;
             set;
-            
+
         }
         string Teach();
 

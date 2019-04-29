@@ -6,7 +6,7 @@ namespace A7
     public class EduInstitute<TTeacher> where TTeacher : ITeacher, ICitizen
     {
         private string _Title;
-       public string Title
+        public string Title
         {
             get
             {
@@ -18,7 +18,7 @@ namespace A7
             }
         }
         private Degree _MinimumDegree;
-         public Degree MinimumDegree
+        public Degree MinimumDegree
         {
             get
             {
@@ -29,8 +29,8 @@ namespace A7
                 _MinimumDegree = value;
             }
         }
-     private   List<TTeacher> _Teachers = new List<TTeacher>();
-        public List<TTeacher> Teachers 
+        private List<TTeacher> _Teachers = new List<TTeacher>();
+        public List<TTeacher> Teachers
         {
             get
             {
@@ -41,26 +41,24 @@ namespace A7
                 _Teachers = value;
             }
         }
-        public EduInstitute(string title,Degree minimumDegree)
+        public EduInstitute(string title, Degree minimumDegree)
         {
             this._Title = title;
             this._MinimumDegree = minimumDegree;
-            
+
         }
-
-
 
         public bool Register(TTeacher teacher)
         {
             return (teacher.TopDegree == Degree.None);
-                
+
         }
 
         public bool IsEligible(TTeacher teacher)
         {
-            
-                return PoliceStation.BackgroundCheck(teacher);
-         
+
+            return PoliceStation.BackgroundCheck(teacher);
+
         }
     }
 }
