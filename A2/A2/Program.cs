@@ -10,26 +10,13 @@ namespace A2
     {
         private static void Main(string[] args)
         {
-<<<<<<< HEAD
-=======
-
-        }
->>>>>>> 100ad1cc82c95ac86463775aceea9c4f182ae879
-
         }
         public static void ArraySwap(ref int[] array1, ref int[] array2)
         {
             int[] tmp = array1;
             array1 = array2;
             array2 = tmp;
-<<<<<<< HEAD
             Console.WriteLine(array2);
-=======
-
-            Console.WriteLine(array2);
-
-
->>>>>>> 100ad1cc82c95ac86463775aceea9c4f182ae879
         }
 
         public static void ArraySwap(int[] array1, int[] array2)
@@ -37,17 +24,10 @@ namespace A2
             int temp = 0;
             for (int i = 0; i < array1.Length; i++)
             {
-<<<<<<< HEAD
-               temp = array1[i];
-                array1[i] = array2[i];
-                array2[i] = temp;
-=======
-
                 temp = array1[i];
                 array1[i] = array2[i];
                 array2[i] = temp;
 
->>>>>>> 100ad1cc82c95ac86463775aceea9c4f182ae879
             }
 
         }
