@@ -10,18 +10,13 @@ namespace A2
     {
         private static void Main(string[] args)
         {
-
         }
-
         public static void ArraySwap(ref int[] array1, ref int[] array2)
         {
             int[] tmp = array1;
             array1 = array2;
             array2 = tmp;
-
             Console.WriteLine(array2);
-
-
         }
 
         public static void ArraySwap(int[] array1, int[] array2)
@@ -29,7 +24,6 @@ namespace A2
             int temp = 0;
             for (int i = 0; i < array1.Length; i++)
             {
-
                 temp = array1[i];
                 array1[i] = array2[i];
                 array2[i] = temp;
