@@ -10,8 +10,8 @@ namespace A6
     public class TypeWithMemoryOnHeap
     {
 
-        TypeOfSize32768 a;
-        TypeOfSize32768[] values;
+        public TypeOfSize32768 a;
+        public TypeOfSize32768[] values;
         public void Allocate()
         {
             values = new TypeOfSize32768[120];
@@ -27,115 +27,66 @@ namespace A6
     {
 
         public object X;
-        public StructOrClass1(Object x)
-        {
-            X = x;
-        }
-
 
     }
     public class StructOrClass2
     {
         public object X;
-        object x;
-        public StructOrClass2()
-        {
-            X = x;
-        }
+
     }
     public class StructOrClass3
     {
         public StructOrClass2 X;
-        StructOrClass2 x;
-        public StructOrClass3()
-        {
-            X = x;
-        }
+
     }
 
     public struct TypeOfSize10240
     {
-        TypeOfSize1024 a;
-        TypeOfSize1024 b;
-        TypeOfSize1024 c;
-        TypeOfSize1024 d;
-        TypeOfSize1024 e;
-        TypeOfSize1024 f;
-        TypeOfSize1024 g;
-        TypeOfSize1024 h;
-        TypeOfSize1024 i;
-        TypeOfSize1024 j;
+        public TypeOfSize1024 a;
+        public TypeOfSize1024 b;
+        public TypeOfSize1024 c;
+        public TypeOfSize1024 d;
+        public TypeOfSize1024 e;
+        public TypeOfSize1024 f;
+        public TypeOfSize1024 g;
+        public TypeOfSize1024 h;
+        public TypeOfSize1024 i;
+        public TypeOfSize1024 j;
     }
     public struct TypeForMaxStackOfDepth10
     {
-        TypeOfSize10240 a;
-        TypeOfSize10240 b;
-        TypeOfSize10240 a1;
-        TypeOfSize10240 b1;
-        TypeOfSize1024 c;
-        TypeOfSize1024 d;
+        public TypeOfSize10240 a;
+        public TypeOfSize10240 b;
+        public TypeOfSize10240 a1;
+        public TypeOfSize10240 b1;
+        public TypeOfSize1024 c;
+        public TypeOfSize1024 d;
     }
 
     public struct TypeForMaxStackOfDepth100
     {
-        TypeOfSize1024 a;
-        TypeOfSize1024 a1;
-        TypeOfSize1024 b;
-        TypeOfSize1024 b1;
-        TypeOfSize125 c;
-        TypeOfSize125 c1;
-        TypeOfSize125 d;
-        TypeOfSize125 e;
-        TypeOfSize22 f;
-        TypeOfSize22 g;
-        TypeOfSize22 h;
-        TypeOfSize22 i;
-        TypeOfSize22 m;
+        public TypeOfSize1024 a;
+        public TypeOfSize1024 a1;
+        public TypeOfSize1024 b;
+        public TypeOfSize1024 b1;
+        public TypeOfSize1024 c;
     }
 
     public struct TypeForMaxStackOfDepth1000
     {
 
-        TypeOfSize125 a;
-        TypeOfSize125 b;
-        TypeOfSize125 z;
-        TypeOfSize22 c;
-        TypeOfSize22 d;
-        TypeOfSize22 e;
-        TypeOfSize22 f;
-        //TypeOfSize22 TypeOfSize22_5;
-        TypeOfSize5 g;
-        TypeOfSize5 h;
-        TypeOfSize5 o;
-        //TypeOfSize5 TypeOfSize5_4;
-        TypeOfSize5 i;
-        //byte char_1;
-        //byte char_2;
-        //byte char_3;
-        //byte char_4;
-        //byte char_5;
+        public TypeOfSize125 a;
+        public TypeOfSize125 b;
+        public TypeOfSize125 z;
+        public TypeOfSize125 x;
     }
 
     public struct TypeForMaxStackOfDepth3000
     {
-
-
-        TypeOfSize22 a;
-        TypeOfSize22 b;
-        TypeOfSize22 m;
-        TypeOfSize22 n;
-        TypeOfSize5 c;
-        TypeOfSize5 d;
-        TypeOfSize5 e;
-        TypeOfSize5 a1;
-        TypeOfSize5 a2;
-        TypeOfSize5 g;
-        TypeOfSize5 h;
-        TypeOfSize5 s;
-        byte ap;
-        byte ao;
-        byte ab;
-        byte aw;
+        public TypeOfSize125 z;
+        public TypeOfSize5 s;
+        public byte ap;
+        public byte ao;
 
     }
 
@@ -143,83 +94,83 @@ namespace A6
 
     public struct TypeOfSize5
     {
-        byte a;
-        byte b;
-        byte c;
-        byte d;
-        byte e;
+        public byte a;
+        public byte b;
+        public byte c;
+        public byte d;
+        public byte e;
     }
     public struct TypeOfSize22
     {
-        TypeOfSize5 a;
-        TypeOfSize5 b;
-        TypeOfSize5 c;
-        TypeOfSize5 d;
-        byte f;
-        byte e;
+        public TypeOfSize5 a;
+        public TypeOfSize5 b;
+        public TypeOfSize5 c;
+        public TypeOfSize5 d;
+        public byte f;
+        public byte e;
     }
     public struct TypeOfSize125
     {
-        TypeOfSize22 a;
-        TypeOfSize22 b;
-        TypeOfSize22 c;
-        TypeOfSize22 d;
-        TypeOfSize22 e;
+        public TypeOfSize22 a;
+        public TypeOfSize22 b;
+        public TypeOfSize22 c;
+        public TypeOfSize22 d;
+        public TypeOfSize22 e;
 
-        TypeOfSize5 f;
-        TypeOfSize5 g;
-        TypeOfSize5 h;
+        public TypeOfSize5 f;
+        public TypeOfSize5 g;
+        public TypeOfSize5 h;
     }
     public struct TypeOfSize1024
     {
 
-        TypeOfSize125 a;
-        TypeOfSize125 b;
-        TypeOfSize125 c;
-        TypeOfSize125 d;
-        TypeOfSize125 e;
-        TypeOfSize125 f;
-        TypeOfSize125 g;
-        TypeOfSize125 h;
-        TypeOfSize22 i;
-        byte x;
-        byte z;
+        public TypeOfSize125 a;
+        public TypeOfSize125 b;
+        public TypeOfSize125 c;
+        public TypeOfSize125 d;
+        public TypeOfSize125 e;
+        public TypeOfSize125 f;
+        public TypeOfSize125 g;
+        public TypeOfSize125 h;
+        public TypeOfSize22 i;
+        public byte x;
+        public byte z;
 
     }
     public struct TypeOfSize32768
     {
-        TypeOfSize1024 a;
-        TypeOfSize1024 b;
-        TypeOfSize1024 c;
-        TypeOfSize1024 d;
-        TypeOfSize1024 e;
-        TypeOfSize1024 f;
-        TypeOfSize1024 g;
-        TypeOfSize1024 h;
-        TypeOfSize1024 m;
-        TypeOfSize1024 hn;
-        TypeOfSize1024 a1;
-        TypeOfSize1024 b1;
-        TypeOfSize1024 c1;
-        TypeOfSize1024 d1;
-        TypeOfSize1024 e1;
-        TypeOfSize1024 f1;
-        TypeOfSize1024 g1;
-        TypeOfSize1024 h1;
-        TypeOfSize1024 m1;
-        TypeOfSize1024 hn1;
-        TypeOfSize1024 a2;
-        TypeOfSize1024 b2;
-        TypeOfSize1024 c2;
-        TypeOfSize1024 d2;
-        TypeOfSize1024 e2;
-        TypeOfSize1024 f2;
-        TypeOfSize1024 g2;
-        TypeOfSize1024 h2;
-        TypeOfSize1024 m2;
-        TypeOfSize1024 hn2;
-        TypeOfSize1024 m3;
-        TypeOfSize1024 hn3;
+        private TypeOfSize1024 a;
+        private TypeOfSize1024 b;
+        private TypeOfSize1024 c;
+        private TypeOfSize1024 d;
+        private TypeOfSize1024 e;
+        private TypeOfSize1024 f;
+        private TypeOfSize1024 g;
+        private TypeOfSize1024 h;
+        private TypeOfSize1024 m;
+        private TypeOfSize1024 hn;
+        private TypeOfSize1024 a1;
+        private TypeOfSize1024 b1;
+        private TypeOfSize1024 c1;
+        private TypeOfSize1024 d1;
+        private TypeOfSize1024 e1;
+        private TypeOfSize1024 f1;
+        private TypeOfSize1024 g1;
+        private TypeOfSize1024 h1;
+        private TypeOfSize1024 m1;
+        private TypeOfSize1024 hn1;
+        private TypeOfSize1024 a2;
+        private TypeOfSize1024 b2;
+        private TypeOfSize1024 c2;
+        private TypeOfSize1024 d2;
+        private TypeOfSize1024 e2;
+        private TypeOfSize1024 f2;
+        private TypeOfSize1024 g2;
+        private TypeOfSize1024 h2;
+        private TypeOfSize1024 m2;
+        private TypeOfSize1024 hn2;
+        private TypeOfSize1024 m3;
+        private TypeOfSize1024 hn3;
     }
 
 
@@ -270,7 +221,7 @@ namespace A6
         }
         static void Main(string[] args)
         {
-           
+
         }
     }
 }
