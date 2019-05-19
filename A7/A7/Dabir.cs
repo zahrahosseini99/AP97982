@@ -77,7 +77,7 @@
 
         public string Teach()
         {
-            return "Dabir" + " " + this.Name + " " + "is" + " " + "teaching";
+            return $"Dabir {this.Name} is teaching";
         }
     }
 }

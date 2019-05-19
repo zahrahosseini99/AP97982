@@ -3,23 +3,21 @@ using System.Collections.Generic;
 
 namespace A7
 {
-    public static class PoliceStation
+    public class PoliceStation:ICitizen
     {
-        private static string _BlackList;
-        public static string BlackList
+
+        public static List<ICitizen> BlackList
         {
-            get
-            {
-                return _BlackList;
-            }
-            set
-            {
-                _BlackList = value;
-            }
+            get;set;
         }
+       
+       public string NationalId { get; set; }
+        public string Name { get ; set; }
+
+       
         public static bool BackgroundCheck(ICitizen citizen)
         {
-            if (BlackList == citizen.Name)
+            if (BlackList.Contains(citizen))
                 return true;
             return false;
         }

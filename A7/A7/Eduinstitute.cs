@@ -50,14 +50,19 @@ namespace A7
 
         public bool Register(TTeacher teacher)
         {
-            return (teacher.TopDegree == Degree.None);
-
+            if (teacher.TopDegree >= MinimumDegree)
+            {
+                Teachers.Add(teacher);
+                return true;
+            }
+            return false;
         }
 
         public bool IsEligible(TTeacher teacher)
         {
 
-            return PoliceStation.BackgroundCheck(teacher);
+            return teacher.TopDegree >= MinimumDegree;
+              
 
         }
     }

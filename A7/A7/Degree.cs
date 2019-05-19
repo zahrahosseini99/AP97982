@@ -2,10 +2,10 @@ namespace A7
 {
     public enum Degree : int
     {
-        None,
-        Diploma,
-        Bachelor,
-        Master,
-        PhD
+        None=1,
+        Diploma=2,
+        Bachelor=4,
+        Master=8,
+        PhD=16
     }
 }
