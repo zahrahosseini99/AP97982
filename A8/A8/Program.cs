@@ -76,25 +76,18 @@ namespace A8
         }
         public static bool operator !=(Human h1, Human h2)
         {
-            return h1.BirthDate != h2.BirthDate;
+            return !(h1.BirthDate == h2.BirthDate);
 
         }
         public static bool operator >=(Human h1, Human h2)
         {
 
-            if (h1.BirthDate.Year > h2.BirthDate.Year)
-                return true;
-            else if (h1.BirthDate.Year == h2.BirthDate.Year)
-                return true;
-            return false;
+            return h1.BirthDate.Year >= h2.BirthDate.Year;
+
         }
         public static bool operator <=(Human h1, Human h2)
         {
-            if (h1.BirthDate.Year < h2.BirthDate.Year)
-                return true;
-            else if (h1.BirthDate.Year == h2.BirthDate.Year)
-                return true;
-            return false;
+            return h1.BirthDate.Year <= h2.BirthDate.Year;
         }
         public static bool operator <(Human h1, Human h2)
         {
