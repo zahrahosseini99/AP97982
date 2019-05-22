@@ -50,7 +50,7 @@ namespace A7
 
         public bool Register(TTeacher teacher)
         {
-            if (teacher.TopDegree >= MinimumDegree)
+           if( IsEligible(teacher))
             {
                 Teachers.Add(teacher);
                 return true;
