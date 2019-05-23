@@ -81,8 +81,8 @@ namespace A8.Tests
             Human h3 = new Human("MohammadReza", "Hosseini", date, 180);
             Human h4 = new Human("MohammadReza", "Hosseini", date1, 180);
             Assert.AreEqual(h1 >= h2, true);
-            Assert.AreEqual(h2 >= h3, true);
-            Assert.AreEqual(h4 >= h1, false);
+            Assert.AreEqual(h2 >= h3, false);
+            Assert.AreEqual(h4 >= h1, true);
         }
 
         [TestMethod()]
@@ -97,8 +97,8 @@ namespace A8.Tests
             Human h3 = new Human("MohammadReza", "Hosseini", date, 180);
             Human h4 = new Human("MohammadReza", "Hosseini", date1, 180);
             Assert.AreEqual(h1 <= h2, true);
-            Assert.AreEqual(h2 <= h3, false);
-            Assert.AreEqual(h4 <= h1, true);
+            Assert.AreEqual(h2 <= h3, true);
+            Assert.AreEqual(h4 <= h1, false);
         }
         [TestMethod()]
         public void GreaterThanTest()
@@ -111,8 +111,8 @@ namespace A8.Tests
             Human h2 = new Human("Zahra", "Hosseini", DateTime.Today, 170);
             Human h3 = new Human("MohammadReza", "Hosseini", date, 180);
             Human h4 = new Human("MohammadReza", "Hosseini", date1, 180);
-            Assert.AreEqual(h1 > h3, true);
-            Assert.AreEqual(h3 > h4, false);
+            Assert.AreEqual(h1 > h3, false);
+            Assert.AreEqual(h3 > h4, true);
         }
         [TestMethod()]
         public void LessThanTest()
@@ -125,8 +125,8 @@ namespace A8.Tests
             Human h2 = new Human("Zahra", "Hosseini", DateTime.Today, 170);
             Human h3 = new Human("MohammadReza", "Hosseini", date, 180);
             Human h4 = new Human("MohammadReza", "Hosseini", date1, 180);
-            Assert.AreEqual(h1 < h3, false);
-            Assert.AreEqual(h3 < h4, true);
+            Assert.AreEqual(h1 < h3, true);
+            Assert.AreEqual(h3 < h4, false);
         }
         [TestMethod()]
         public void GetHashCodeTest()
