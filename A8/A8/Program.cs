@@ -11,7 +11,6 @@ namespace A8
     {
         static void Main(string[] args)
         {
-            Human h;
         }
     }
 }
