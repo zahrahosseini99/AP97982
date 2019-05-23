@@ -63,7 +63,7 @@ namespace A7
         }
         public string Teach()
         {
-            return ("Khalle" + " " + this.Name + " " + "is" + " " + "teaching");
+            return  $"Khalle {this.Name} is teaching";
         }
     }
 }
