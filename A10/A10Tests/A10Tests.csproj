@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="ProjectTests\MatrixTests.cs" />
     <Compile Include="ProjectTests\VectorTests.cs" />
+    <Compile Include="Project\SquareMatrixTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,9 +70,7 @@
       <Name>A10</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Project\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

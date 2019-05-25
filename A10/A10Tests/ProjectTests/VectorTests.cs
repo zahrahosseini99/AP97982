@@ -98,7 +98,7 @@ namespace A10Tests
             {
                 Assert.AreEqual(idx++, item);
             }
-        }
+       }
 
         [TestMethod]
         public void HashCodeTest()

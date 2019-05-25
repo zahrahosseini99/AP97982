@@ -10,14 +10,8 @@ namespace A10
     {
         static void Main(string[] args)
         {
-            Vector<int> v = new Vector<int>(2)
-            {
-                1,2
-            };
-
-            int i = v[1];
-
-            v[0] = 4;
+         
+           
         }
     }
 }

@@ -24,8 +24,14 @@ namespace A10
         /// <param name="columnCount"></param>
         public Matrix(int rowCount, int columnCount)
         {
+
             RowCount = rowCount;
             ColumnCount = columnCount;
+            this.Rows = new Vector<_Type>[RowCount];
+            for (int i = 0; i < rowCount; i++)
+            {
+                this.Rows[i] = new Vector<_Type>(ColumnCount);
+            }
 
         }
 
@@ -35,16 +41,18 @@ namespace A10
         /// <param name="rowCount"></param>
         /// <param name="columnCount"></param>
 
-        public Matrix(IEnumerable<Vector<_Type>> rows)
+        public Matrix(IEnumerable<Vector<_Type>> rows) : this(rows.Count(), rows.Count())
         {
+
             int i = 0;
-            Vector<_Type>[] R = new Vector<_Type>[rows.Count()];
-            foreach (var d in rows)
+
+            this.Rows = new Vector<_Type>[rows.Count()];
+            this.Rows[i++] = new Vector<_Type>(rows.First().Count());
+            foreach (Vector<_Type> d in rows)
             {
-                R[i] = d;
-                i++;
+                Add(d);
             }
-            Rows = R;
+
         }
 
         public void Add(Vector<_Type> row)
@@ -77,11 +85,11 @@ namespace A10
 
             get
             {
-                return Rows[row][col];
+                return this.Rows[row][col];
             }
             set
             {
-                Rows[row][col] = value;
+                this.Rows[row][col] = value;
 
             }
         }
@@ -90,65 +98,141 @@ namespace A10
             string res = "[";
             foreach (Vector<_Type> v in Rows)
             {
-                res += "\n" + "[";
-                foreach (_Type m in v)
-                {
-                    res += m + ",";
-                }
-                res = res.TrimEnd(',') + "]";
+
+                res += "\n" + v.ToString() + ",";
+
             }
+            res = res.TrimEnd(',');
             res += "\n" + "]";
             return res;
         }
-        ///// <summary>
-        ///// overloading + operator for the class Matrix customly
-        ///// </summary>
-        ///// <param name="m1">right hand side operand (type : matrix)</param>
-        ///// <param name="m2">left hand side operand (type : matrix)</param>
-        ///// <returns>a matrix as result of the sum</returns>
-        //public static Matrix<_Type> operator +(Matrix<_Type> m1, Matrix<_Type> m2)
-        //{
+        /// <summary>
+        /// overloading + operator for the class Matrix customly
+        /// </summary>
+        /// <param name="m1">right hand side operand (type : matrix)</param>
+        /// <param name="m2">left hand side operand (type : matrix)</param>
+        /// <returns>a matrix as result of the sum</returns>
+        public static Matrix<_Type> operator +(Matrix<_Type> m1, Matrix<_Type> m2)
+        {
+            Matrix<_Type> m3 = new Matrix<_Type>(m1.RowCount, m2.ColumnCount);
 
-        //}
 
-        ///// <summary>
-        ///// overloading * operator for matrix class
-        ///// </summary>
-        ///// <param name="m1">RHS of the operator</param>
-        ///// <param name="m2">LHS of the operator</param>
-        ///// <returns></returns>
-        //public static Matrix<_Type> operator *(Matrix<_Type> m1, Matrix<_Type> m2)
-        //{
+            if ((m1.RowCount == m2.RowCount) && (m2.ColumnCount == m1.ColumnCount))
+            {
+                for (int i = 0; i < m1.RowCount; i++)
+                {
+                    m3.Rows[i] = m1.Rows[i] + m2.Rows[i];
+                }
+                return m3;
+            }
 
-        //}
+            else
+                throw new InvalidOperationException();
 
-        ///// <summary>
-        ///// Get an enumerator that enumerates over elements in a column
-        ///// </summary>
-        ///// <param name="col"></param>
-        ///// <returns>IEnumerable</returns>
-        //protected IEnumerable<_Type> GetColumnEnumerator(int col)
-        //{
-        //}
+        }
 
-        //protected Vector<_Type> GetColumn(int col) =>
-        //    new Vector<_Type>(GetColumnEnumerator(col));
+        /// <summary>
+        /// overloading * operator for matrix class
+        /// </summary>
+        /// <param name="m1">RHS of the operator</param>
+        /// <param name="m2">LHS of the operator</param>
+        /// <returns></returns>
+        public static Matrix<_Type> operator *(Matrix<_Type> m1, Matrix<_Type> m2)
+        {
+
+            Matrix<_Type> m3 = new Matrix<_Type>(m1.RowCount, m2.ColumnCount);
+            try
+            {
+                if (m1.ColumnCount == m2.RowCount)
+                {
+
+
+                    for (int i = 0; i < m1.RowCount; i++)
+                    {
+                        for (int j = 0; j < m2.ColumnCount; j++)
+                        {
+                            dynamic res = 0;
+                            for (int k = 0; k < m1.ColumnCount; k++)
+                            {
+                                dynamic n1 = m1[i][k];
+                                dynamic n2 = m2[k][j];
+                                res = res + n1 * n2;
+                                m3[i][j] = res;
+                            }
+                        }
+                    }
+
+                }
+                else
+                    throw new InvalidOperationException();
+            }
+
+            catch (IndexOutOfRangeException)
+            {
+                ;
+            }
+
+            return m3;
+
+
+        }
+
+        /// <summary>
+        /// Get an enumerator that enumerates over elements in a column
+        /// </summary>
+        /// <param name="col"></param>
+        /// <returns>IEnumerable</returns>
+        protected IEnumerable<_Type> GetColumnEnumerator(int col)
+        {
+            for (int i = 0; i < RowCount; i++)
+            {
+                foreach (_Type d in Rows[i])
+                {
+
+                    yield return Rows[i][col];
+                }
+            }
+
+        }
+
+        protected Vector<_Type> GetColumn(int col) =>
+            new Vector<_Type>(GetColumnEnumerator(col));
 
 
         public bool Equals(Matrix<_Type> other)
         {
+
+            int count = 0;
             if (other == null)
                 return false;
-
-            if (this.Rows == other.Rows)
-                return true;
-            else
-                return false;
+            for (int i = 0; i < Rows.Length; i++)
+            {
+                foreach (_Type v in Rows[i])
+                    if (this.Rows[i] == other.Rows[i])
+                        count++;
+            }
+            return count == Rows.Length;
         }
 
-        //public override bool Equals(object obj)
-        //{
-        //}
+        public override bool Equals(object obj)
+        {
+            int count = 0;
+            Matrix<_Type> m = obj as Matrix<_Type>;
+            if (m.Rows == null)
+                return false;
+            else
+            {
+                for (int i = 0; i < Rows.Length; i++)
+                {
+                    if (m.Rows[i].ToString() == this.Rows[i].ToString())
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            return count == m.Rows.Length;
+        }
 
         public override int GetHashCode()
         {
@@ -163,13 +247,48 @@ namespace A10
         {
             foreach (Vector<_Type> d in Rows)
             {
+
                 yield return d;
+
             }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+        public static bool operator ==(Matrix<_Type> m1, Matrix<_Type> m2)
+        {
+            int count = 0;
+            if (m1.RowCount == m2.RowCount)
+            {
+                for (int i = 0; i < m1.Rows.Length; i++)
+                {
+                    if (m1.Rows[i].ToString() == m2.Rows[i].ToString())
+                        count++;
+                }
+                return (count == m1.Rows.Length);
+            }
+            else
+                return false;
+
+        }
+        public static bool operator !=(Matrix<_Type> m1, Matrix<_Type> m2)
+        {
+            int count = 0;
+            if (m1.RowCount == m2.RowCount)
+            {
+                for (int i = 0; i < m1.Rows.Length; i++)
+                {
+                    if (!(m1 == m2))
+                        count++;
+                }
+
+                return (count >= 1);
+            }
+            else
+                return true;
+
         }
 
     }

@@ -46,6 +46,7 @@ namespace A10
         public Vector(int length)
         {
             this.Data = new _Type[length];
+
         }
 
 
@@ -67,14 +68,13 @@ namespace A10
         public Vector(IEnumerable<_Type> list)
             : this(list.Count())
         {
-            _Type[] D = new _Type[list.Count()];
-            int i = 0;
+
+
             foreach (var d in list)
             {
-                D[i] = d;
-                i++;
+                Add(d);
             }
-            this.Data = D;
+
         }
 
         /// <summary>
@@ -144,8 +144,9 @@ namespace A10
 
                 for (int i = 0; i < v1.Data.Length; i++)
                 {
-
-                    multiply = Convert.ToInt32(v1.Data[i].ToString()) * Convert.ToInt32(v2.Data[i].ToString());
+                    dynamic n1 = v1.Data[i];
+                    dynamic n2 = v2.Data[i];
+                    multiply = n1 * n2;
                     res += multiply;
                 }
 
@@ -210,7 +211,7 @@ namespace A10
                         count++;
             }
             catch {; }
-            return count >=1;
+            return count >= 1;
         }
 
         /// <summary>
@@ -224,11 +225,11 @@ namespace A10
             Vector<_Type> v1 = obj as Vector<_Type>;
             if (v1.Data == null)
                 return false;
-            
-                
+
+
             else
             {
-                if(v1.Data.Length == this.Data.Length)
+                if (v1.Data.Length == this.Data.Length)
                 {
                     for (int i = 0; i < v1.Data.Length; i++)
                     {
@@ -237,8 +238,8 @@ namespace A10
                     }
                     return count == v1.Data.Length;
                 }
-              
-               
+
+
             }
             return false;
         }
