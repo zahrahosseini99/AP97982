@@ -239,10 +239,10 @@ namespace A9
                 }
 
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException e)
             {
 
-                result += ":Object reference not set to an instance of an object.";
+                result += $":{e.Message}";
 
                 if (!DoNotThrow)
                     throw;
