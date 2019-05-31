@@ -14,7 +14,7 @@ namespace A10.Tests
         [TestMethod()]
         public void SquareMatrixTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 1},
                 new Vector<int>(2) { 2, 3},
@@ -29,7 +29,7 @@ namespace A10.Tests
         [TestMethod()]
         public void SquareMatrixTest1()
         {
-            Matrix<int> m = new Matrix<int>(2, 2)
+            SquareMatrix<int> m = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 1},
                 new Vector<int>(2) { 2, 3},
@@ -45,7 +45,7 @@ namespace A10.Tests
         [TestMethod()]
         public void MatrixTest()
         {
-            Matrix<int> m = new Matrix<int>(3, 3)
+            SquareMatrix<int> m = new SquareMatrix<int>(3, 3)
             {
                 new Vector<int>(3) { 10, 11, 12},
                 new Vector<int>(3) { 20, 21, 22},
@@ -62,13 +62,13 @@ namespace A10.Tests
         [TestMethod]
         public void MultiplyTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 1, 2},
                 new Vector<int>(2) { 2, -1},
             };
 
-            Matrix<int> m2 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { -1, 2},
                 new Vector<int>(2) { 2, 1},
@@ -87,13 +87,13 @@ namespace A10.Tests
         [ExpectedException(typeof(InvalidOperationException))]
         public void MultiplyExceptionTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 3)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 3)
             {
                 new Vector<int>(3) { 1, 2, 1},
                 new Vector<int>(3) { 2, -1, 1},
             };
 
-            Matrix<int> m2 = new Matrix<int>(2, 3)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(2, 3)
             {
                 new Vector<int>(3) { 1, 2, 1},
                 new Vector<int>(3) { 2, -1, 1},
@@ -105,13 +105,13 @@ namespace A10.Tests
         [TestMethod]
         public void AddTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 1, 2 },
                 new Vector<int>(2) { 2, -1},
             };
 
-            Matrix<int> m2 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 2},
                 new Vector<int>(2) { 1, 4},
@@ -127,13 +127,13 @@ namespace A10.Tests
         [ExpectedException(typeof(InvalidOperationException))]
         public void AddExceptionTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 3)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 3)
             {
                 new Vector<int>(3) { 1, 2, 1},
                 new Vector<int>(3) { 2, -1, 1},
             };
 
-            Matrix<int> m2 = new Matrix<int>(1, 3)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(1, 3)
             {
                 new Vector<int>(3) { 0, 2, 1},
             };
@@ -144,13 +144,13 @@ namespace A10.Tests
         [TestMethod]
         public void MultiplyTestLong()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 100)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 100)
             {
                 new Vector<int>(Enumerable.Repeat(1, 100)),
                 new Vector<int>(Enumerable.Repeat(0, 100)),
             };
 
-            Matrix<int> m2 = new Matrix<int>(Enumerable.Repeat(new Vector<int>(2) { 1, 0 }, 100));
+            SquareMatrix<int> m2 = new SquareMatrix<int>(Enumerable.Repeat(new Vector<int>(2) { 1, 0 }, 100));
 
             var m3 = m1 * m2;
 
@@ -163,25 +163,25 @@ namespace A10.Tests
         [TestMethod()]
         public void EqualsTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 1, 2},
                 new Vector<int>(2) { 2, -1},
             };
 
-            Matrix<int> m2 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 1, 2},
                 new Vector<int>(2) { 2, -1},
             };
 
-            Matrix<int> m3 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m3 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 1, 2},
                 new Vector<int>(2) { 2, 0},
             };
 
-            Matrix<int> m4 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m4 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 1, 2},
                 new Vector<int>(2) { 2, -1},
@@ -203,18 +203,18 @@ namespace A10.Tests
         [TestMethod]
         public void MultiAddTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 1},
                 new Vector<int>(2) { 2, -1},
             };
-            Matrix<int> m2 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { -1, 1},
                 new Vector<int>(2) { 1, 2},
             };
 
-            Matrix<int> m3 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m3 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 1},
                 new Vector<int>(2) { 1, 0},
@@ -229,18 +229,18 @@ namespace A10.Tests
         [TestMethod]
         public void MultiMultiplyTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 1},
                 new Vector<int>(2) { 2, -1},
             };
-            Matrix<int> m2 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { -1, 1},
                 new Vector<int>(2) { 1, 2},
             };
 
-            Matrix<int> m3 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m3 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 1},
                 new Vector<int>(2) { 1, 0},
@@ -255,18 +255,18 @@ namespace A10.Tests
         [TestMethod]
         public void MultiExpressionTest()
         {
-            Matrix<int> m1 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 1},
                 new Vector<int>(2) { 2, -1},
             };
-            Matrix<int> m2 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { -1, 1},
                 new Vector<int>(2) { 1, 2},
             };
 
-            Matrix<int> m3 = new Matrix<int>(2, 2)
+            SquareMatrix<int> m3 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(2) { 0, 1},
                 new Vector<int>(2) { 1, 0},
@@ -281,7 +281,7 @@ namespace A10.Tests
         [TestMethod()]
         public void MatrixToStringTest()
         {
-            Matrix<int> m = new Matrix<int>(3, 3)
+            SquareMatrix<int> m = new SquareMatrix<int>(3, 3)
             {
                 new Vector<int>(3) { 10, 11, 12},
                 new Vector<int>(3) { 20, 21, 22},
