@@ -68,7 +68,7 @@ namespace A12
         public double TopQuarterBoundary()
         {
 
-            int n = Apps.Where(i => i.Categori == "PHOTOGRAPHY").OrderBy(d => d.Rating).Count();
+            int n = Apps.Where(i => i.Categori == "PHOTOGRAPHY").Count();
             return Apps.Where(i => i.Categori == "PHOTOGRAPHY")
                 .OrderBy(d => d.Rating).Select(d => d.Rating).Take(3 * n / 4).Last();
         }
