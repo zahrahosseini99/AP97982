@@ -9,19 +9,12 @@ namespace A11
     public class SavingsAccount : Account
     {
         public double InterestRate { get; set; }
-        public SavingsAccount(double balance,double interestRate) : base(balance)
+        public SavingsAccount(double balance, double interestRate) : base(balance)
         {
-            
-            InterestRate = interestRate;
-          
-            if (balance >= 0)
-                Balance = balance;
-    else
-            {
-                Balance = 0;
-         
 
-            }
+            InterestRate = interestRate;
+
+
         }
         public double CalculateInterest()
         {

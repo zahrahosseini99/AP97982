@@ -2,25 +2,29 @@
 
 namespace A11
 {
-    public  class CheckingAccount:Account
+    public class CheckingAccount : Account
     {
         public double TransactionFee;
-       public CheckingAccount(double balance, double transactionFee): base(balance)
+        public CheckingAccount(double balance, double transactionFee) : base(balance)
         {
             TransactionFee = transactionFee;
         }
-        public void Credit(double amount)
+        public override void Credit(double amount)
         {
-            if (amount >= 0)
-                this.Balance += amount-TransactionFee;
+            if (amount > 0)
+            {
+                Balance += amount - TransactionFee;
+            }
             else
+            {
                 throw new ArgumentException($"Credit amount must be positive");
+            }
         }
-        public bool Debit(double amount)
+        public override bool Debit(double amount)
         {
             if (amount <= this.Balance)
             {
-                this.Balance = Balance - amount-TransactionFee;
+                this.Balance = Balance - amount - TransactionFee;
                 return true;
             }
 
