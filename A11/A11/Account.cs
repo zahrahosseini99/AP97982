@@ -32,20 +32,21 @@ namespace A11
         }
         public virtual bool Debit(double amount)
         {
+            bool res = true;
             if (amount <= this.Balance)
             {
                 this.Balance = Balance - amount;
-                return true;
+                res = true;
             }
 
             else
             {
                 Console.Write($"Debit amount exceeded account balance.{Environment.NewLine}");
                 this.Balance = Balance;
-                return false;
+                res = false;
 
             }
-
+            return res;
         }
     }
 }

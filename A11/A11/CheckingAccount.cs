@@ -11,31 +11,18 @@ namespace A11
         }
         public override void Credit(double amount)
         {
-            if (amount > 0)
-            {
-                Balance += amount - TransactionFee;
-            }
-            else
-            {
-                throw new ArgumentException($"Credit amount must be positive");
-            }
+            base.Credit(amount);
+            Balance = Balance - TransactionFee;
         }
         public override bool Debit(double amount)
         {
-            if (amount <= this.Balance)
+            if (base.Debit(amount))
             {
-                this.Balance = Balance - amount - TransactionFee;
+                Balance = Balance - TransactionFee;
                 return true;
             }
-
             else
-            {
-                Console.Write($"Debit amount exceeded account balance.{Environment.NewLine}");
-                this.Balance = Balance - 0;
                 return false;
-
-            }
-
         }
     }
 }
