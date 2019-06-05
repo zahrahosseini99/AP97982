@@ -88,7 +88,6 @@ namespace A12
         }
         public List<string> XCoolestApps(int x, Func<AppData, double> criteria)
         {
-            criteria = (app) => app.Rating * app.Installs / 1000;
             return Apps.OrderBy(i => criteria(i)).Take(x).Select(i => i.Name).ToList();
         }
     }
