@@ -12,7 +12,7 @@ namespace A12
     public class AppData
     {
         public string Name;
-        public string Categori;
+        public string Category;
         public double Rating;
         public long Reviews;
         public double size;
@@ -27,7 +27,7 @@ namespace A12
         public AppData(string[] fields)
         {
             Name = fields[0];
-            Categori = fields[1];
+            Category = fields[1];
             Rating = double.Parse(fields[2]);
             Reviews = long.Parse(fields[3]);
             if (fields[4] == "Varies with device")
