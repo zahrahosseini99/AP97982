@@ -7,7 +7,6 @@ using System.IO;
 
 namespace A11
 {
-
     public class Account
     {
         public double Balance { get; set; }
@@ -36,15 +35,12 @@ namespace A11
             if (amount <= this.Balance)
             {
                 this.Balance = Balance - amount;
-                res = true;
             }
-
             else
             {
                 Console.Write($"Debit amount exceeded account balance.{Environment.NewLine}");
                 this.Balance = Balance;
                 res = false;
-
             }
             return res;
         }
