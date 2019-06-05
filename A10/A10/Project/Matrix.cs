@@ -44,10 +44,11 @@ namespace A10
         public Matrix(IEnumerable<Vector<_Type>> rows) : this(rows.Count(), rows.First().Count())
         {
             int i = 0;
-                this.Rows = new Vector<_Type>[rows.Count()];
+            this.Rows = new Vector<_Type>[rows.Count()];
             this.Rows[i++] = new Vector<_Type>(rows.First().Count());
             foreach (Vector<_Type> d in rows)
             {
+                if(d.Count()==rows.First().Count())
                 Add(d);
             }
 
@@ -137,8 +138,7 @@ namespace A10
         {
 
             Matrix<_Type> m3 = new Matrix<_Type>(m1.RowCount, m2.ColumnCount);
-            try
-            {
+           
                 if (m1.ColumnCount == m2.RowCount)
                 {
 
@@ -159,14 +159,14 @@ namespace A10
                     }
 
                 }
-                else
-                    throw new InvalidOperationException();
-            }
-
-            catch (IndexOutOfRangeException)
+            else
             {
-                ;
+                throw new InvalidOperationException();
+                throw new IndexOutOfRangeException();
             }
+                   
+           
+
 
             return m3;
 

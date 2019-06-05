@@ -176,7 +176,6 @@ namespace A10Tests
                 new Vector<int>(3) { 0, 1, 2},
                 new Vector<int>(3) { 3, 4, 5},
             };
-
             int idx = 0;
             foreach (var vec in m1)
                 foreach (var item in vec)

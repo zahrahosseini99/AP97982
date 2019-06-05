@@ -108,7 +108,7 @@ namespace A10
 
             if (v1.Data.Length != v2.Data.Length)
             {
-                throw new Exception();
+                throw new Exception("The vectors don't have the same size.");
             }
             else
             {
@@ -138,7 +138,7 @@ namespace A10
             dynamic multiply = 0;
             if (v1.Data.Length != v2.Data.Length)
             {
-                throw new Exception();
+                throw new Exception("The vectors don't have the same size.");
             }
             else
             {

@@ -87,16 +87,17 @@ namespace A10.Tests
         [ExpectedException(typeof(InvalidOperationException))]
         public void MultiplyExceptionTest()
         {
-            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 3)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
-                new Vector<int>(3) { 1, 2, 1},
-                new Vector<int>(3) { 2, -1, 1},
+                new Vector<int>(2) { 1, 2},
+                new Vector<int>(2) { 2, -1},
             };
 
-            SquareMatrix<int> m2 = new SquareMatrix<int>(2, 3)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(3, 3)
             {
-                new Vector<int>(3) { 1, 2, 1},
-                new Vector<int>(3) { 2, -1, 1},
+                new Vector<int>(3) { 1, 2,1},
+                new Vector<int>(3) { 2, -1,1},
+                 new Vector<int>(3) { 2, -1,1},
             };
 
             var m3 = m1 * m2;
@@ -127,15 +128,17 @@ namespace A10.Tests
         [ExpectedException(typeof(InvalidOperationException))]
         public void AddExceptionTest()
         {
-            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 3)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
-                new Vector<int>(3) { 1, 2, 1},
-                new Vector<int>(3) { 2, -1, 1},
+                new Vector<int>(2) { 1, 2},
+                new Vector<int>(2) { 2, -1},
             };
 
-            SquareMatrix<int> m2 = new SquareMatrix<int>(1, 3)
+            SquareMatrix<int> m2 = new SquareMatrix<int>(3, 3)
             {
                 new Vector<int>(3) { 0, 2, 1},
+                 new Vector<int>(3) { 0, 2, 1},
+                  new Vector<int>(3) { 0, 2, 1},
             };
 
             var m3 = m1 + m2;
@@ -144,17 +147,17 @@ namespace A10.Tests
         [TestMethod]
         public void MultiplyTestLong()
         {
-            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 100)
+            SquareMatrix<int> m1 = new SquareMatrix<int>(2, 2)
             {
                 new Vector<int>(Enumerable.Repeat(1, 100)),
                 new Vector<int>(Enumerable.Repeat(0, 100)),
             };
 
-            SquareMatrix<int> m2 = new SquareMatrix<int>(Enumerable.Repeat(new Vector<int>(2) { 1, 0 }, 100));
+            SquareMatrix<int> m2 = new SquareMatrix<int>(Enumerable.Repeat(new Vector<int>(2) { 1, 0 }, 2));
 
             var m3 = m1 * m2;
 
-            Assert.AreEqual(100, m3[0, 0]);
+            Assert.AreEqual(2, m3[0, 0]);
             Assert.AreEqual(0, m3[0, 1]);
             Assert.AreEqual(0, m3[1, 0]);
             Assert.AreEqual(0, m3[1, 1]);
