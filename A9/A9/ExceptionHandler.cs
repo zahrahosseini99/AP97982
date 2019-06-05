@@ -10,7 +10,7 @@ namespace A9
 {
     public class ExceptionHandler
     {
-       
+
         public string ErrorMsg { get; set; }
         public readonly bool DoNotThrow;
         private string _Input;
@@ -25,10 +25,10 @@ namespace A9
                         return _Input;
 
                     else throw new NullReferenceException();
-                
+
                 }
-              
-                catch (NullReferenceException i)
+
+                catch (NullReferenceException)
                 {
                     if (!DoNotThrow)
                         throw;
@@ -38,16 +38,16 @@ namespace A9
             }
             set
             {
-               
+
                 try
                 {
-                    if (null != value)
-                    { _Input = value; }
+                    if (value.Length < 50)
+                        _Input = value;
                     else
                         throw new NullReferenceException();
                 }
-              
-                catch (NullReferenceException i)
+
+                catch (NullReferenceException)
                 {
                     if (!DoNotThrow)
                         throw;
@@ -56,25 +56,25 @@ namespace A9
             }
         }
 
-        //public bool CauseExceptionInConstructor;
+
 
         public ExceptionHandler(
             string input,
             bool causeExceptionInConstructor,
-            bool doNotThrow=false)
+            bool doNotThrow = false)
         {
             //CauseExceptionInConstructor = causeExceptionInConstructor;
             DoNotThrow = doNotThrow;
             this._Input = input;
             try
             {
-             if(causeExceptionInConstructor)
+                if (causeExceptionInConstructor)
                 {
                     input = null;
-              Console.Write( input.Length);
+                    Console.Write(input.Length);
                 }
-               
-            
+
+
             }
             catch (NullReferenceException N)
             {
@@ -97,38 +97,38 @@ namespace A9
                 checked
                 {
                     i++;
-                    
+
                 }
             }
             catch (OverflowException e)
             {
                 if (!DoNotThrow)
                     throw;
-               
+
                 ErrorMsg = $"Caught exception {e.GetType()}";
             }
         }
 
         public void FormatExceptionMethod()
         {
-			try
+            try
             {
                 int i = int.Parse(Input);
             }
-            catch(FormatException e)
+            catch (FormatException e)
             {
                 if (!DoNotThrow)
                     throw;
                 ErrorMsg = $"Caught exception {e.GetType()}";
             }
         }
-       
+
 
         public void FileNotFoundExceptionMethod()
         {
             try
             {
-                Input= File.ReadAllLines("myfilename.txt").ToString();
+                Input = File.ReadAllLines("myfilename.txt").ToString();
             }
             catch (FileNotFoundException e)
             {
@@ -156,21 +156,21 @@ namespace A9
 
         public void OutOfMemoryExceptionMethod()
         {
-           
+
             try
             {
                 int[] newArray = new int[int.MaxValue];
                 Input = newArray.ToString();
-               
+
             }
             catch (OutOfMemoryException e)
             {
                 if (!DoNotThrow)
                 {
-                    ErrorMsg = null;
+                    throw new OutOfMemoryException(); ;
                 }
                 else
-                ErrorMsg = $"Caught exception {e.GetType()}";
+                    ErrorMsg = $"Caught exception {e.GetType()}";
             }
         }
 
@@ -178,12 +178,12 @@ namespace A9
         {
             try
             {
-                if(Input == int.MaxValue.ToString())
+                if (Input == int.MaxValue.ToString())
                 {
                     Input = Convert.ToString(new string[int.MaxValue]);
                 }
-               
-               if( Input == "1" && DoNotThrow )
+
+                if (Input == "1" && DoNotThrow)
                 {
 
                     int[] range = new int[1] { 1 };
@@ -195,27 +195,27 @@ namespace A9
                     int a = int.MaxValue;
                     a++;
                 }
-                    
-               
+
+
 
             }
             catch (IndexOutOfRangeException e)
             {
-               
-                    if (!DoNotThrow)
-                        throw;
-                    ErrorMsg = $"Caught exception {e.GetType()}";
-               
+
+                if (!DoNotThrow)
+                    throw;
+                ErrorMsg = $"Caught exception {e.GetType()}";
+
             }
             catch (OutOfMemoryException e)
             {
-               
-                    if (!DoNotThrow)
-                        throw ;
-                    ErrorMsg = $"Caught exception {e.GetType()}";
-               
+
+                if (!DoNotThrow)
+                    throw;
+                ErrorMsg = $"Caught exception {e.GetType()}";
+
             }
-            
+
         }
         public string FinallyBlockStringOut { get; set; }
         public void FinallyBlockMethod(string s)
@@ -242,7 +242,7 @@ namespace A9
             catch (NullReferenceException e)
             {
 
-                result += ":Object reference not set to an instance of an object.";
+                result += $":{e.Message}";
 
                 if (!DoNotThrow)
                     throw;
@@ -255,7 +255,7 @@ namespace A9
                 {
                     result += "";
                 }
-                if (s == null && DoNotThrow )
+                if (s == null && DoNotThrow)
                 {
                     result += ":EndOfMethod";
                 }
@@ -265,9 +265,9 @@ namespace A9
                 }
                 FinallyBlockStringOut = result;
             }
-            
-           
-           
+
+
+
         }
         [MethodImpl(MethodImplOptions.NoInlining)]
         public void MethodA()
@@ -288,29 +288,13 @@ namespace A9
         public void MethodD()
         {
 
-            try
-            {
-                int i = int.MaxValue;
-                checked
-                {
-                    i++;
-                
-                }
-                string j = i.ToString();
-            }
-            catch
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
+
         }
         [MethodImpl(MethodImplOptions.NoInlining)]
         public void NestedMethods()
         {
-
-
             MethodA();
-
-
         }
 
         public static void ThrowIfOdd(int n)

@@ -10,6 +10,7 @@ namespace A9Tests
     public class OutOfMemoryExceptionTests
     {
         #region OutOfMemoryException
+        [ExpectedException(typeof(OutOfMemoryException))]
         [TestMethod]
         public void TestNoOutOfMemoryException()
         {
@@ -20,7 +21,7 @@ namespace A9Tests
         }
 
         [TestMethod]
-      
+        [ExpectedException(typeof(OutOfMemoryException))]
         public void TestThrowOutOfMemoryException()
         {
             ExceptionHandler eh = new ExceptionHandler(int.MaxValue.ToString(), false);
