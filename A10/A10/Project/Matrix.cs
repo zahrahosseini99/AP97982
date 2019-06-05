@@ -41,15 +41,14 @@ namespace A10
         /// <param name="rowCount"></param>
         /// <param name="columnCount"></param>
 
-        public Matrix(IEnumerable<Vector<_Type>> rows) : this(rows.Count(), rows.Count())
+        public Matrix(IEnumerable<Vector<_Type>> rows) : this(rows.Count(), rows.First().Count())
         {
-
             int i = 0;
-
             this.Rows = new Vector<_Type>[rows.Count()];
             this.Rows[i++] = new Vector<_Type>(rows.First().Count());
             foreach (Vector<_Type> d in rows)
             {
+                if(d.Count()==rows.First().Count())
                 Add(d);
             }
 
@@ -69,13 +68,11 @@ namespace A10
         {
             get
             {
-                return this.Rows[index];
+                return Rows[index];
             }
             set
             {
-                Vector<_Type>[] v = this.Rows;
-                v[index] = value;
-
+                Rows[index] = value;
             }
         }
 
@@ -141,8 +138,7 @@ namespace A10
         {
 
             Matrix<_Type> m3 = new Matrix<_Type>(m1.RowCount, m2.ColumnCount);
-            try
-            {
+           
                 if (m1.ColumnCount == m2.RowCount)
                 {
 
@@ -163,14 +159,14 @@ namespace A10
                     }
 
                 }
-                else
-                    throw new InvalidOperationException();
-            }
-
-            catch (IndexOutOfRangeException)
+            else
             {
-                ;
+                throw new InvalidOperationException();
+                throw new IndexOutOfRangeException();
             }
+                   
+           
+
 
             return m3;
 
@@ -260,7 +256,7 @@ namespace A10
         public static bool operator ==(Matrix<_Type> m1, Matrix<_Type> m2)
         {
             int count = 0;
-            if (m1.RowCount == m2.RowCount)
+            if (m1.RowCount == m2.RowCount && m2.Rows.Length==m1.Rows.Length)
             {
                 for (int i = 0; i < m1.Rows.Length; i++)
                 {
@@ -275,19 +271,7 @@ namespace A10
         }
         public static bool operator !=(Matrix<_Type> m1, Matrix<_Type> m2)
         {
-            int count = 0;
-            if (m1.RowCount == m2.RowCount)
-            {
-                for (int i = 0; i < m1.Rows.Length; i++)
-                {
-                    if (!(m1 == m2))
-                        count++;
-                }
-
-                return (count >= 1);
-            }
-            else
-                return true;
+            return !(m1 == m2);
 
         }
 

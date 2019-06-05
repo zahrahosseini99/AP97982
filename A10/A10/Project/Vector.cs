@@ -90,8 +90,8 @@ namespace A10
             }
             set
             {
-                _Type[] v = this.Data;
-                v[index] = value;
+               
+                this.Data[index] = value;
 
             }
         }
@@ -105,23 +105,21 @@ namespace A10
         public static Vector<_Type> operator +(Vector<_Type> v1, Vector<_Type> v2)
         {
             Vector<_Type> res = new Vector<_Type>(v1.Data.Length);
-            try
-            {
-                if (v1.Data.Length != v2.Data.Length) { }
 
+            if (v1.Data.Length != v2.Data.Length)
+            {
+                throw new Exception("The vectors don't have the same size.");
+            }
+            else
+            {
                 dynamic sum = 0;
                 for (int i = 0; i < v1.Data.Length; i++)
                 {
-
-                    sum = Convert.ToInt32(v1.Data[i].ToString()) + Convert.ToInt32(v2.Data[i].ToString());
+                    dynamic n = v1.Data[i];
+                    dynamic m = v2.Data[i];
+                    sum = n + m;
                     res.Data[i] = sum;
                 }
-
-
-            }
-            catch
-            {
-                throw new Exception();
 
             }
             return res;
@@ -136,12 +134,14 @@ namespace A10
         public static _Type operator *(Vector<_Type> v1, Vector<_Type> v2)
         {
             dynamic res = 0;
-            try
+
+            dynamic multiply = 0;
+            if (v1.Data.Length != v2.Data.Length)
             {
-                dynamic multiply = 0;
-                if (v1.Data.Length != v2.Data.Length) { }
-
-
+                throw new Exception("The vectors don't have the same size.");
+            }
+            else
+            {
                 for (int i = 0; i < v1.Data.Length; i++)
                 {
                     dynamic n1 = v1.Data[i];
@@ -149,13 +149,6 @@ namespace A10
                     multiply = n1 * n2;
                     res += multiply;
                 }
-
-
-            }
-            catch
-            {
-                throw new Exception();
-
             }
             return res;
 
@@ -203,15 +196,7 @@ namespace A10
         /// <returns>v1 not equal to v2</returns>
         public static bool operator !=(Vector<_Type> v1, Vector<_Type> v2)
         {
-            int count = 0;
-            try
-            {
-                for (int i = 0; i < v1.Data.Length; i++)
-                    if (v1.Data[i].ToString() != v2.Data[i].ToString())
-                        count++;
-            }
-            catch {; }
-            return count >= 1;
+            return !(v1 == v2);
         }
 
         /// <summary>
@@ -251,13 +236,7 @@ namespace A10
         /// <returns>whether other vector is equal to this vector</returns>
         public bool Equals(Vector<_Type> other)
         {
-            if (other == null)
-                return false;
-
-            if (this.Data == other.Data)
-                return true;
-            else
-                return false;
+            return this.Data == other.Data;
         }
 
         public override int GetHashCode()
