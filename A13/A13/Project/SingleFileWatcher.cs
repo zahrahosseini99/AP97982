@@ -9,30 +9,32 @@ namespace A13
         public FileSystemWatcher Watcher = new FileSystemWatcher();
     
        
-        public Action a;
+        public Action newAction;
        
         public SingleFileWatcher(string path)
         {
-     Watcher = new FileSystemWatcher(@"C:\git\AP97982\A13\A13Tests\bin\Debug", Path.GetFileName(path));
+            int index = path.LastIndexOf('\\');
+            string new_path = path.Substring(0, index);
+     Watcher = new FileSystemWatcher(new_path, Path.GetFileName(path));
   }
 
         private void Watcher_Changed(object sender, FileSystemEventArgs e)
         {
-            a();
+            newAction();
         }
 
 
 
-        public void Register(Action p)
+        public void Register(Action action)
         {
             Watcher.EnableRaisingEvents = true;
-            a += p;
+            newAction += action;
             Watcher.Changed += Watcher_Changed;
         }
-        public void Unregister(Action p)
+        public void Unregister(Action action)
         {
             Watcher.EnableRaisingEvents = true;
-            a -= p;
+            newAction -= action;
         }
         public void Dispose()
         {
