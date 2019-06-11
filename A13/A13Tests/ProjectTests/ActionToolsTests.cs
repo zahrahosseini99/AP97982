@@ -276,7 +276,6 @@ namespace EventDelegateThread.Tests
         [TestMethod()]
         public void CallParallelThreadSafeAsyncTest()
         {
-            Assert.Inconclusive();
             int? sum = 0;
             Stopwatch sw = Stopwatch.StartNew();
             var result = ActionTools.CallParallelThreadSafeAsync(100,
@@ -288,7 +287,7 @@ namespace EventDelegateThread.Tests
             result.Wait();
             var elapsed = sw.ElapsedMilliseconds;
             Assert.IsTrue(Math.Abs(result.Result - elapsed) < TestTimingTolerance);
-            Assert.AreEqual(100, sum);
+            Assert.AreEqual(110, sum);
         }
 
     }
