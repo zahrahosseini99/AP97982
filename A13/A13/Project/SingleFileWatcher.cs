@@ -15,8 +15,8 @@ namespace A13
         {
             int index = path.LastIndexOf('\\');
             string new_path = path.Substring(0, index);
-     Watcher = new FileSystemWatcher(new_path, Path.GetFileName(path));
-  }
+            Watcher = new FileSystemWatcher(new_path, Path.GetFileName(path));
+        }
 
         private void Watcher_Changed(object sender, FileSystemEventArgs e)
         {
