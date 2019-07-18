@@ -18,6 +18,8 @@ namespace A13
 
         public void Start()
         {
+            Delay = 100;
+            Thread.Sleep(Delay + 100);
             ThreadPool.QueueUserWorkItem((o) => Reminder(Msg));
         }
     }
