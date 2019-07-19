@@ -36,7 +36,7 @@ namespace A13
             time.Stop();
             return time.ElapsedMilliseconds;
         }
-        public static object asynchrony = new object();
+
         public static long CallParallelThreadSafe(int count, params Action[] actions)
         {
             Stopwatch time = new Stopwatch();
@@ -77,14 +77,14 @@ namespace A13
         {
             Stopwatch time = new Stopwatch();
             time.Start();
-            List<Task> First = new List<Task>();
+            var List = new List<Task>();
             foreach (var act in actions)
             {
                 Task t = new Task(() => act());
-                First.Add(t);
+                List.Add(t);
                 await Task.Run(() => t.Start());
             }
-            Task.WaitAll(First.ToArray());
+            Task.WaitAll(List.ToArray());
             time.Stop();
             return time.ElapsedMilliseconds;
         }

@@ -7,13 +7,13 @@ namespace A13
     {
 
         public FileSystemWatcher Watcher = new FileSystemWatcher();
-    
-       
+
+
         public Action newAction;
-       
+
         public SingleFileWatcher(string path)
         {
-        
+
             Watcher = new FileSystemWatcher(Path.GetDirectoryName(path), Path.GetFileName(path));
             Watcher.EnableRaisingEvents = true;
             Watcher.Changed += Watcher_Changed;
@@ -30,13 +30,13 @@ namespace A13
 
         public void Register(Action action)
         {
-           
+
             newAction += action;
-     
+
         }
         public void Unregister(Action action)
         {
-            Watcher.EnableRaisingEvents = true;
+
             newAction -= action;
         }
         public void Dispose()
