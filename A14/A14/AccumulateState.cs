@@ -29,9 +29,9 @@ namespace A14
         {
             if (Calc.PendingOperator != null)
             {
-                Calc.Display = Calc.Accumulation.ToString();
+                Calc.Display = Calc.Display.Split('+', '-', '*', '^')[1];
             }
-            Calc.Accumulation = double.Parse(Calc.Display);
+
             return ProcessOperator(new ComputeState(this.Calc), c);
         }
 
