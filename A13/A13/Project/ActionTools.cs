@@ -24,14 +24,14 @@ namespace A13
         public static long CallParallel(params Action[] actions)
         {
 
-            List<Task> myTask = new List<Task>();
+            var list = new List<Task>();
             Stopwatch time = new Stopwatch();
             time.Start();
             foreach (var s in actions)
             {
-                myTask.Add(Task.Run(s));
+                list.Add(Task.Run(s));
             }
-            var a = Task.WhenAll(myTask);
+            var a = Task.WhenAll(list);
             a.Wait();
             time.Stop();
             return time.ElapsedMilliseconds;
@@ -77,14 +77,14 @@ namespace A13
         {
             Stopwatch time = new Stopwatch();
             time.Start();
-            var List = new List<Task>();
+            var list = new List<Task>();
             foreach (var act in actions)
             {
                 Task t = new Task(() => act());
-                List.Add(t);
+                list.Add(t);
                 await Task.Run(() => t.Start());
             }
-            Task.WaitAll(List.ToArray());
+            Task.WaitAll(list.ToArray());
             time.Stop();
             return time.ElapsedMilliseconds;
         }
