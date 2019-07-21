@@ -12,8 +12,8 @@ namespace A14
         public override IState EnterEqual()
         {
 
-            string NewDisplay = Calc.Display.Split(Calc.PendingOperator.Value)[1];
-            Calc.Display = NewDisplay;
+            string newDisplay = Calc.Display.Split(Calc.PendingOperator.Value)[1];
+            Calc.Display = newDisplay;
 
             return ProcessOperator(new ComputeState(this.Calc), '=');
         }
@@ -29,9 +29,9 @@ namespace A14
         {
             if (Calc.PendingOperator != null)
             {
-                Calc.Display = Calc.Accumulation.ToString();
+                Calc.Display = Calc.Display.Split('+', '-', '*', '^')[1];
             }
-            Calc.Accumulation = double.Parse(Calc.Display);
+
             return ProcessOperator(new ComputeState(this.Calc), c);
         }
 
