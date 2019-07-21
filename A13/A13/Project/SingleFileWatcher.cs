@@ -7,38 +7,41 @@ namespace A13
     {
 
         public FileSystemWatcher Watcher = new FileSystemWatcher();
-    
-       
+
+
         public Action newAction;
-       
+
         public SingleFileWatcher(string path)
         {
-            int index = path.LastIndexOf('\\');
-            string new_path = path.Substring(0, index);
-            Watcher = new FileSystemWatcher(new_path, Path.GetFileName(path));
+
+            Watcher = new FileSystemWatcher(Path.GetDirectoryName(path), Path.GetFileName(path));
+            Watcher.EnableRaisingEvents = true;
+            Watcher.Changed += Watcher_Changed;
         }
 
         private void Watcher_Changed(object sender, FileSystemEventArgs e)
         {
-            newAction();
+            newAction?.Invoke();
+
+
         }
 
 
 
         public void Register(Action action)
         {
-            Watcher.EnableRaisingEvents = true;
+
             newAction += action;
-            Watcher.Changed += Watcher_Changed;
+
         }
         public void Unregister(Action action)
         {
-            Watcher.EnableRaisingEvents = true;
+
             newAction -= action;
         }
         public void Dispose()
         {
-            
+            Watcher.Dispose();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-
+using System.Threading.Tasks;
 namespace A13
 {
     public class SingleReminderThread : ISingleReminder
@@ -19,6 +19,8 @@ namespace A13
 
         public void Start()
         {
+            Delay = 100;
+            Thread.Sleep(Delay + 100);
             ReiminderThread = new Thread(()=>Reminder(Msg));
             ReiminderThread.Start();
         }

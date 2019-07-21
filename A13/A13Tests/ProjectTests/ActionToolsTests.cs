@@ -276,7 +276,7 @@ namespace EventDelegateThread.Tests
         [TestMethod()]
         public void CallParallelThreadSafeAsyncTest()
         {
-            Assert.Inconclusive();
+           // Assert.Inconclusive();
                 int? sum = 0;
                 Stopwatch sw = Stopwatch.StartNew();
                 var result = ActionTools.CallParallelThreadSafeAsync(100,
