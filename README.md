@@ -71,21 +71,30 @@ Build a simple WPF application.
 
 ### Screenshot 1
 <p align="center">
-  <img width="100%" src="https://github.com/zahrahosseini99/2048-game/blob/master/version%201/screenshot1.png" alt="2048 screenshot1">
+  <img width="100%" src="https://github.com/YOUR_GITHUB_USERNAME/AP97982/blob/master/ScreenShots/screenshot1.png?raw=true" alt="Math Analyzer screenshot1">
 </p>
 
 ### Screenshot 2
 <p align="center">
-  <img width="100%" src="https://github.com/zahrahosseini99/2048-game/blob/master/version%201/screenshot2.png" alt="2048 screenshot2">
+  <img width="100%" src="https://github.com/YOUR_GITHUB_USERNAME/AP97982/blob/master/P1/screenshots/screenshot2.png?raw=true" alt="Math Analyzer screenshot2">
 </p>
 
 ### Screenshot 3
 <p align="center">
-  <img width="100%" src="https://github.com/zahrahosseini99/2048-game/blob/master/version%202/screenshot2.png" alt="2048 screenshot3">
+  <img width="100%" src="https://github.com/YOUR_GITHUB_USERNAME/AP97982/blob/master/P1/screenshots/screenshot3.png?raw=true" alt="Math Analyzer screenshot3">
 </p>
 
 ### Screenshot 4
 <p align="center">
-  <img width="100%" src="https://github.com/zahrahosseini99/2048-game/blob/master/version%202/screenshot1.png" alt="2048 screenshot4">
+  <img width="100%" src="https://github.com/YOUR_GITHUB_USERNAME/AP97982/blob/master/P1/screenshots/screenshot4.png?raw=true" alt="Math Analyzer screenshot4">
 </p>
 
+### Screenshot 5
+<p align="center">
+  <img width="100%" src="https://github.com/YOUR_GITHUB_USERNAME/AP97982/blob/master/P1/screenshots/screenshot5.png?raw=true" alt="Math Analyzer screenshot5">
+</p>
+
+### Screenshot 6
+<p align="center">
+  <img width="100%" src="https://github.com/YOUR_GITHUB_USERNAME/AP97982/blob/master/P1/screenshots/screenshot6.png?raw=true" alt="Math Analyzer screenshot6">
+</p>
